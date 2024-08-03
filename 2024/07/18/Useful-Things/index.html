@@ -1,0 +1,172 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>Blog</title><meta name="author"><link rel="shortcut icon" href="/img/favicon.png"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><meta name="generator" content="Hexo 7.3.0"></head><body><header id="page_header"><div class="header_wrap"><div id="blog_name"><a class="blog_title" id="site-name" href="/">Blog</a></div><button class="menus_icon"><div class="navicon"></div></button><ul class="menus_items"><li class="menus_item"><a class="site-page" href="/"> About</a></li><li class="menus_item"><a class="site-page" href="/gallery"> Gallery</a></li></ul></div></header><main id="page_main"><div class="side-card sticky"><div class="card-wrap" itemscope itemtype="http://schema.org/Person"><div class="author-avatar"><img class="avatar-img" src="/img/1.png" onerror="this.onerror=null;this.src='/img/profile.png'" alt="avatar"></div><div class="author-discrip"><h3>Hong Zhaoyang</h3><p class="author-bio">Sunshine☀️</p></div><div class="author-links"><button class="btn m-social-links">Links</button><ul class="social-icons"><li><a class="social-icon" href="https://github.com/hfhongzy" target="_blank"><i class="fab fa-github" aria-hidden="true"></i></a></li><li><a class="social-icon" href="/img/wechat.jpg" target="_blank"><i class="fab fa-weixin" aria-hidden="true"></i></a></li><li><a class="social-icon" href="mailto:hongzy2022@mail.sustech.edu.cn" target="_blank"><i class="fas fa-envelope" aria-hidden="true"></i></a></li></ul><ul class="social-links"><li><a class="e-social-link" href="https://orcid.org/0009-0000-1798-8770" target="_blank"><i class="fab fa-orcid" aria-hidden="true"></i><span>ORCID</span></a></li></ul></div></div></div><div class="page" itemscope itemtype="http://schema.org/CreativeWork"><h2 class="page-title">Useful Things</h2><article><p>Missing</p>
+<ul>
+<li><p><code>cd ~</code>: (<code>tilde</code>) to home; <code>cd -</code>: (<code>dash</code>) to the last directory</p>
+</li>
+<li><p><code>flag</code> and <code>options</code>: no arguments &amp; with arguments </p>
+</li>
+<li><p><code>ls -l</code></p>
+<ul>
+<li><p><code>d</code>: directory</p>
+</li>
+<li><p><code>rwx</code>: read, write, execute</p>
+</li>
+<li><p>first three: owner</p>
+</li>
+<li><p>second three: permission for the groups that owns the file</p>
+</li>
+<li><p>final three: permission for everyone else</p>
+</li>
+<li><p>special cases</p>
+<ul>
+<li>if you have permission on write file but not having permission for this directory, you can modify or empty it, but can not delete it.</li>
+<li><code>x</code> on directory is the permission for enter the directory (cd)</li>
+</ul>
+<p><code>mv a b</code>: move a to b (or, rename)</p>
+<p><code>cp a b</code>: copy from a to b</p>
+<p><code>rm a</code>: remove</p>
+<p>​	<code>-r </code>: recursively</p>
+<p>​	<code>rmdir</code>: remove an empty directory</p>
+<p><code>mkdir My\ Photo</code>: create a directory named “My Photo”</p>
+<p><code>man xxx</code>: show the manual pages</p>
+<p>angle brackets <code>&lt;</code> and <code>&gt;</code>：<code>echo hello &gt; hello.txt</code></p>
+<p><code>cat file</code>: print the content</p>
+<p><code>cat &lt; file1.txt &gt; file2.txt</code>: copy</p>
+<p><code>&gt;&gt;</code> (double end bracket): append instead of overwrite</p>
+<p><code>|</code> (pipe character)</p>
+<p><code>ls -l | tail -n1</code></p>
+<p><code>sudo su</code> &amp; <code>exit</code>: enter and exit from root user (<code>#</code> occurred at the front, instead of <code>$</code>)</p>
+</li>
+</ul>
+<p>Lecture 2</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ foo=bar</span><br><span class="line">$ <span class="built_in">echo</span> <span class="variable">$foo</span></span><br><span class="line">bar</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;Value is <span class="variable">$foo</span>&quot;</span></span><br><span class="line">Value is bar</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&#x27;Value is $foo&#x27;</span></span><br><span class="line">Value is <span class="variable">$foo</span></span><br></pre></td></tr></table></figure>
+
+<p><code>mkdir -p directory</code>: no error when it already exists</p>
+<p><code>source file.sh</code> execute the bash script</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> mybash.sh </span><br><span class="line"><span class="function"><span class="title">mcd</span></span>() &#123;</span><br><span class="line">	<span class="built_in">echo</span> <span class="string">&quot;This is script <span class="variable">$0</span>&quot;</span></span><br><span class="line">	<span class="built_in">mkdir</span> <span class="string">&quot;script_<span class="variable">$1</span>&quot;</span></span><br><span class="line">	<span class="built_in">cd</span> <span class="string">&quot;script_<span class="variable">$1</span>&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">$ <span class="built_in">source</span> mybash.sh</span><br><span class="line">$ mcd hi</span><br><span class="line">This is scipt -bash</span><br><span class="line"><span class="comment"># now, in script_hi/</span></span><br></pre></td></tr></table></figure>
+
+<p><code>$0</code> is the name of the script</p>
+<p><code>$1,$2</code> is the first and second arguments</p>
+<p><code>$?</code> get the error code of the previous command</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hahaha</span><br><span class="line">-bash: hahaha: <span class="built_in">command</span> not found</span><br><span class="line">$ <span class="built_in">echo</span> $?</span><br><span class="line">127</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>$_</code> : last argument passed</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> First Second Third</span><br><span class="line">First Second Third</span><br><span class="line">$ <span class="built_in">echo</span> <span class="variable">$_</span></span><br><span class="line">Third</span><br></pre></td></tr></table></figure>
+
+<p><code>!!</code>: bang-bang</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> f s</span><br><span class="line">f s</span><br><span class="line">$ !!</span><br><span class="line"><span class="built_in">echo</span> f s</span><br><span class="line">f s</span><br></pre></td></tr></table></figure>
+
+<p>logical operators</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="literal">false</span> || <span class="built_in">echo</span> <span class="string">&quot;Printed&quot;</span></span><br><span class="line">Printed</span><br><span class="line">$ <span class="literal">true</span> || <span class="built_in">echo</span> <span class="string">&quot;Not Printed&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>semicolon <code>A; B</code></p>
+<p><code>echo &quot;We are in $(pwd)&quot;</code></p>
+<p><code>cat &lt;(ls) &lt;(ls ..)</code>:</p>
+<pre><code>- `&lt;(exec)` generates a temporary file containing the output of `exec`
+</code></pre>
+</li>
+<li><p><code>test -f file</code>: if file exists. Error code &#x3D; 1 (not) &#x2F; 0 (exists)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> mybash.sh </span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Starting at <span class="subst">$(date)</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Running program <span class="variable">$0</span> with <span class="variable">$#</span> arguments with pid $$&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> <span class="string">&quot;<span class="variable">$@</span>&quot;</span>; <span class="keyword">do</span></span><br><span class="line">	grep foobar <span class="string">&quot;<span class="variable">$file</span>&quot;</span> &gt; /dev/null 2&gt; /dev/null</span><br><span class="line">	<span class="comment"># redirect stdout and stderr to a null register</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span> [[ <span class="string">&quot;$?&quot;</span> -ne 0 ]]; <span class="keyword">then</span></span><br><span class="line">		<span class="built_in">echo</span> <span class="string">&quot;File <span class="variable">$file</span> does not have any foobar, adding one.&quot;</span></span><br><span class="line">		<span class="built_in">echo</span> <span class="string">&quot;# foobar&quot;</span> &gt;&gt; <span class="string">&quot;<span class="variable">$file</span>&quot;</span> <span class="comment"># append, not overwrite</span></span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line">$ <span class="built_in">source</span> mybash.sh a.cpp mybash.sh </span><br><span class="line">Starting at Mon Jul 29 21:31:58 CST 2024</span><br><span class="line">Running program -bash with 2 arguments with pid 67826</span><br><span class="line">File a.cpp does not have any foobar, adding one.</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><code>ls *.&#123;cpp,md&#125;</code></p>
+</li>
+<li><p><code>stat -x 1.txt</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">  File: <span class="string">&quot;1.txt&quot;</span></span><br><span class="line">  Size: 0            FileType: Regular File</span><br><span class="line">  Mode: (0644/-rw-r--r--)         Uid: (  501/hongzhaoyang)  Gid: (   20/   staff)</span><br><span class="line">Device: 1,13   Inode: 91791818    Links: 1</span><br><span class="line">Access: Tue Jul 30 20:23:47 2024</span><br><span class="line">Modify: Tue Jul 30 20:23:47 2024</span><br><span class="line">Change: Tue Jul 30 20:23:47 2024</span><br><span class="line"> Birth: Tue Jul 30 20:21:55 2024</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>touch 1.txt</code> : modify timestamp (or, create)</li>
+</ul>
+</li>
+<li><p>Interval</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">mkdir</span> foo bar</span><br><span class="line">$ <span class="built_in">touch</span> &#123;foo,bar&#125;/&#123;a..e&#125;</span><br><span class="line">$ <span class="built_in">cd</span> foo/</span><br><span class="line">$ <span class="built_in">ls</span></span><br><span class="line">a	b	c	d	e</span><br><span class="line">$ <span class="built_in">cd</span> ../bar/</span><br><span class="line">$ <span class="built_in">ls</span></span><br><span class="line">a	b	c	d	e</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>Let the shell know how to execute sth, add the path to the execute</p>
+<p>For example, in python:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/local/bin python</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">for</span> arg <span class="keyword">in</span> <span class="built_in">reversed</span>(sys.argv[<span class="number">1</span>:]):</span><br><span class="line">   <span class="built_in">print</span>(arg)</span><br></pre></td></tr></table></figure>
+
+<p>use <code>chmod +x a.py</code> to give permission for executing <code>a.py</code>.</p>
+<p>Then you can <code>./a.py</code> </p>
+<p>Note: This does not work on MacOS (<code>chmod</code> is invalid on MacOS, but <code>chmod +x  a.sh</code> is allowed).</p>
+<p><code>shellcheck a.sh</code>: check your shell code (need to install <code>shellcheck</code>)</p>
+<p>Note: <code>./a.sh</code> and <code>source a.sh</code> is different. The former one is executing in an isolated environment (no side effect, e.g. <code>cd</code> into some subdirectories).</p>
+</li>
+</ul>
+<p><code>tldr convert</code>: offer simple and brief examples of usage, when <code>man</code> is too long and obscure for you.</p>
+<p><code>find . -name src -type d</code></p>
+<p><code>find . -path &#39;**/test/*.py&#39; -type f</code></p>
+<p><code>find . -mtime 1</code></p>
+<pre><code>- 1 exact one day from last modification
+- -1 within the past one day
+- +1 before one day ago
+</code></pre>
+<p><code>find . -name &quot;*.tmp&quot; -exec rm &#123;&#125; \;</code></p>
+<p><code>locate XXX</code></p>
+<p><code>grep -R something .</code></p>
+<p><code>rg &quot;something&quot; -t py &lt;path&gt;</code></p>
+<ul>
+<li><p>should install <code>ripgrep</code></p>
+</li>
+<li><p><code>-C x</code>: add context, print line $[a-x,a+x]$ </p>
+<p><code>rg -u --file-without-match &quot;^#\!&quot; -t sh</code></p>
+<ul>
+<li><code>-u</code>: <code>--unrestricted</code>. Reduce the level of “smart” searching. A single -u won’t respect <code>.gitignore</code> (etc.) files. Two <code>-u</code> flags will additionally search hidden files and directories. Three <code>-u</code> flags will additionally search binary files.</li>
+<li><code>^#\!</code>: file start with <code>#!</code></li>
+</ul>
+</li>
+<li><p><code>history x</code>: last x commands</p>
+</li>
+<li><p><code>tree</code>: (need to install tree) see the structure of the current directory</p>
+</li>
+<li><p><code> | less</code>: a pager to scroll</p>
+</li>
+</ul>
+<hr>
+<p>ANSI 转义序列</p>
+<p><code>echo -e &quot;\033[1mThis is bold text\033[0m&quot;</code></p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><code>./exec | tee exec.log</code> </li>
+<li><code>tmux</code>, then <code>./exec</code><ul>
+<li>After an unexpected  <code>Network Error</code>: <code>tmux attach</code></li>
+<li><code>tmux kill-session</code></li>
+</ul>
+</li>
+<li><code>top</code> see all processes</li>
+<li><code>lsblk</code></li>
+<li><code>find . -executable -name &quot;prefix*&quot;</code></li>
+<li></li>
+</ul>
+<hr>
+<p>Storage</p>
+<p><strong>Primary storage</strong></p>
+<p>The modern primary storage is semiconductor memory RAM (Random Access Memory).</p>
+<ul>
+<li><p>small-sized, expensive</p>
+</li>
+<li><p>volatile, lose information when not powered</p>
+</li>
+<li><p>access time is measured in <strong>nanoseconds</strong> $10^{-9}s$</p>
+<ul>
+<li>? how to measure?</li>
+</ul>
+</li>
+<li><p>two types: static random access memory (SRAM) and dynamic random access memory (DRAM)</p>
+</li>
+</ul>
+<p>Main memory is connected to the CPU via a memory bus (an address bus and a data bus).</p>
+<p>Additionally, a memory management unit (MMU ❓) is a small device between CPU and RAM recalculating the actual memory address, for example to provide an abstraction of virtual memory or other tasks.</p>
+<p>Non-volatile primary storage containing a small startup program (<strong>BIOS</strong> ❓) is used to bootstrap the computer, that is, to read a larger program from non-volatile secondary storage to RAM and start to execute it. A non-volatile technology used for this purpose is called ROM (Read-Only Memory)</p>
+<ul>
+<li>not literally read only, as updates are possible</li>
+</ul>
+<p><strong>Secondary storage</strong></p>
+<p>In modern computers, <strong>hard disk drives (HDDs)</strong> or <strong>solid-state drives (SSDs)</strong> are usually used as secondary storage.</p>
+<p>![image-20240719164703210](&#x2F;Users&#x2F;hongzhaoyang&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20240719164703210.png)</p>
+<p>![image-20240719164715753](&#x2F;Users&#x2F;hongzhaoyang&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20240719164715753.png)</p>
+</article></div></main><div class="nav-wrap"><div class="nav"><button class="site-nav"><div class="navicon"></div></button><ul class="nav_items"><li class="nav_item"><a class="nav-page" href="/"> About</a></li><li class="nav_item"><a class="nav-page" href="/gallery"> Gallery</a></li></ul></div><div class="cd-top"><i class="fa fa-arrow-up" aria-hidden="true"></i></div></div><footer id="page_footer"><div class="footer_wrap"><div class="copyright">&copy;2024 by null</div><div class="theme-info">Powered by <a target="_blank" href="https://hexo.io" rel="nofollow noopener">Hexo</a> & <a target="_blank" href="https://github.com/PhosphorW/hexo-theme-academia" rel="nofollow noopener">Academia Theme</a></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery-pjax@latest/jquery.pjax.min.js"></script><script src="/js/main.js"></script></body></html>
